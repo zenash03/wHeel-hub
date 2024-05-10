@@ -1,0 +1,438 @@
+.section-promotions {
+    display: flex;
+    /* background-color: #f2f2f2; */
+    width: 100%;
+    height: 100%;
+}
+.promotion-image{
+    width: 100%;
+    object-fit: cover;
+}
+.promotion-banner{
+    position: relative;
+}
+.section-promotions .promotion-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    justify-content: flex-end;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(-180deg, rgba(255,255,255,0), rgba(10, 10, 10, 0.711));
+}
+.promotion-description .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.promotion-description .promotion-title {
+    margin-bottom: 10px;
+}
+.promotion-description h1 {
+    font-size: 22px;
+    font-family: 'Racing Sans One';
+    font-weight: 400;
+}
+.promotion-description h3 {
+    line-height: 1.2em;
+    font-size: 48px;
+    font-family: 'Racing Sans One';
+    font-weight: 400;
+}
+.promotion-indicator {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.promotion-indicator .indicator{
+    padding: 5px;
+    background: var(--text-color);
+    border: 1px solid var(--text-color);
+    border-radius: 50%;
+    transform: scale(0.4);
+    transition: 0.5s ease-in-out;
+}
+.promotion-indicator .active {
+    transform: scale(1.1);
+    background: none;
+}
+.section-promotions button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 0.15em solid var(--text-color);
+    background: none;
+    border-radius: 50%;
+}
+.section-promotions button img{
+    width: 14px;
+    height: 14px;
+}
+
+.section-features {
+    margin-left: 5em;
+    margin-right: 5em;
+}
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* align-items: center; */
+    gap: 50px;
+}
+.features .title, .gallery-title, .short-description-title {
+    text-align: center;
+    font-family: "Racing Sans One";
+    font-weight: 400;
+    font-size: 36px;
+    margin-bottom: 0.1em;
+}
+.features .title{
+    grid-column: 1 / 4 span;
+}
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.feature-item .item-image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+.feature-item .item-title {
+    margin: 10px;
+}
+.feature-item .item-text {
+    line-height: 1.85em;
+    font-weight: 500;
+    color: var(--text-color-2);
+}
+
+.section-gallery {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.gallery-collections {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    height: 110vh;
+}
+.gallery-item{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+.gallery-title {
+    margin-bottom: 1.5em;
+}
+.gallery-collections .special {
+    grid-column: 1/2 span;
+    grid-row: 1/2 span;
+}
+.gallery-collections .special-2 {
+    grid-row: 3/2 span;
+    grid-column: 2/2 span;
+}
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    /* transform-origin: 65% 75%; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../../public/Assets/product_card/2024_venza.jpeg");
+}
+.img-01 {
+    background-image: url("../../public/Assets/product_card/2023_Mirai.jpeg");
+}
+.img-02 {
+    background-image: url("../../public/Assets/product_card/2024_GR_Corolla.jpeg");
+}
+.img-03 {
+    background-image: url("../../public/Assets/product_card/2024_grand_highlander.jpeg");
+}
+.img-04 {
+    background-image: url("../../public/Assets/product_card/2024_land_cruiser.jpeg");
+}
+.img-05 {
+    background-image: url("../../public/Assets/product_card/2024_prius_prime.jpeg");
+}
+.img-06 {
+    background-image: url("../../public/Assets/product_card/2024_RAV4.jpeg");
+}
+.img-07 {
+    background-image: url("../../public/Assets/product_card/2024_venza.jpeg");
+}
+.gallery-caption{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+.gallery-caption p {
+    color: white;
+    font-size: 32px;
+    font-family: "Racing Sans One";
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.gallery-image:hover {
+    transform: scale(1.15);
+}
+.gallery-image:hover .gallery-caption p {
+    opacity: 1;
+    transform: translateY(-20px);
+}
+.special .gallery-image:hover .gallery-caption p {
+    transform: translateY(-40px);
+}
+.special-2 .gallery-image:hover .gallery-caption p {
+    transform: translateY(-40px);
+}
+.short-description-title {
+    margin-bottom: 2em;
+}
+.section-short-description {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12em;
+    margin-right: 12em;
+}
+.short-description {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    justify-content: space-between;
+    gap: 100px;
+    align-items: center;
+}
+.short-description .title {
+    font-size: 28px;
+    font-family: "Racing Sans One";
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    letter-spacing: 3px;
+}
+.short-description .description {
+    font-weight: 500;
+    line-height: 1.8em;
+    font-size: 18px;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+.right {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    /* justify-content: flex-end; */
+}
+.short-description-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.section-promotion {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.max-size {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.promotions {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin-left: 5em;
+    margin-right: 5em;
+    width: 1400px;
+    height: 40vh;
+    position: relative;
+}
+.promotion-item {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: 50%;
+}
+.promotion-item:nth-child(2) {
+    left: 15%;
+}
+.promotion-item:nth-child(3) {
+    left: -20%;
+}
+.promotion-item:nth-child(4) {
+    left: -55%;
+}
+.promotion-button{
+    padding: 30px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    grid-column: 1/4 span;
+    gap: 30px;
+}
+.promotion-image-2 {
+    background-image: url("../../public/Assets/product_card/2024_grand_highlander.jpeg");
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 30%;
+    clip-path: polygon(30% 0%, 90% 0%, 70% 100%, 10% 100%);
+    transition: all 0.5s ease-in;
+}
+.pi-02 {
+    background-image: url("../../public/Assets/promotion_banner/2024_corola_hatchback.jpeg");
+}
+.pi-03 {
+    background-image: url("../../public/Assets/promotion_banner/2024_corola_hybrid.jpeg");
+}
+.pi-04 {
+    background-image: url("../../public/Assets/product_card/2023_Mirai.jpeg");
+}
+.promotion-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    /* padding: 10px; */
+    /* padding-right: 120px; */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.promotion-caption .caption-block {
+    height: 12.5%;
+    width: 100%;
+    text-align: right;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255, 255, 255, 0.412));
+}
+.text {
+    padding-right: 120px;
+    right: 0;
+    position: absolute;
+}
+.promotion-caption p {
+    color: white;
+    font-size: 32px;
+    font-family: "Racing Sans One";
+    /* opacity: 0; */
+}
+.group-button {
+    position: absolute;   
+    bottom: 0;
+    right: 0;
+    transform: translateY(-20%);
+}
+
+@media (max-width: 1040px) {
+    .section-promotions .promotion-description{
+        padding: 25px;
+    }
+    .promotion-description h1 {
+        font-size: 18px;
+    }
+    .promotion-description h3 {
+        font-size: 32px;
+    }
+    .promotion-indicator .active {
+        transform: scale(1);
+        background: none;
+    }
+    .section-promotions button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        border: 0.15em solid var(--text-color);
+        background: none;
+        border-radius: 50%;
+    }
+    .section-promotions button img{
+        width: 10px;
+        height: 10px;
+    }
+    .features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* align-items: center; */
+        gap: 40px;
+    }
+    .features .title{
+        grid-column: 1 / 2 span;
+    }
+    .gallery-caption p {
+        font-size: 18px;
+    }
+    .section-gallery {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+    .short-description {
+        gap: 40px;
+    }
+    .section-short-description {
+        margin-left: 3em;
+        margin-right: 3em;
+    }
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 40px;
+    }
+    .social {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .newsletter {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    .copyright {
+        grid-column: 1 / 2 span;
+    }
+
+}
