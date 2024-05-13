@@ -4,12 +4,23 @@
     width: 100%;
     height: 100%;
 }
+.promotion-banner{
+    position: relative;
+}
+.promotion-slider {
+    position: relative;
+    overflow: hidden;
+}
+.promotion-images {
+    position: relative;
+    left: 0;
+    transition: 0.9s ease-in-out;
+    display: flex;
+}
 .promotion-image{
     width: 100%;
     object-fit: cover;
-}
-.promotion-banner{
-    position: relative;
+    float: left;
 }
 .section-promotions .promotion-description {
     position: absolute;
@@ -24,6 +35,7 @@
     flex-direction: column;
     text-align: center;
     background: linear-gradient(-180deg, rgba(255,255,255,0), rgba(10, 10, 10, 0.711));
+    text-transform: capitalize;
 }
 .promotion-description .button-group {
     display: flex;
@@ -33,6 +45,7 @@
 }
 .promotion-description .promotion-title {
     margin-bottom: 10px;
+    position: relative;
 }
 .promotion-description h1 {
     font-size: 22px;
@@ -57,11 +70,24 @@
     border: 1px solid var(--text-color);
     border-radius: 50%;
     transform: scale(0.4);
-    transition: 0.5s ease-in-out;
+}
+@keyframes indicatorScale {
+    0%{
+        background-color: var(--text-color);
+        transform: scale(0.4);
+    }
+    10%{
+        background-color: var(--text-color);
+    }
+    100% {
+        background: none;
+        transform: scale(1.1);
+    }
 }
 .promotion-indicator .active {
     transform: scale(1.1);
     background: none;
+    animation: indicatorScale 0.7s ease-in-out;
 }
 .section-promotions button {
     display: flex;
@@ -69,13 +95,52 @@
     align-items: center;
     width: 40px;
     height: 40px;
-    border: 0.15em solid var(--text-color);
+    /* border: 0.15em solid var(--text-color); */
     background: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
     border-radius: 50%;
+    z-index: 1;
+    border: none;
 }
-.section-promotions button img{
+.section-promotions button::before {
+    content : "";
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    -webkit-mask-image: radial-gradient(transparent 10% 60%, #ffffff 65%);
+            mask-image: radial-gradient(transparent 10% 60%, #ffffff 65%);
+}
+.section-promotions button:hover::before {
+    z-index: 3;
+    background-image: conic-gradient(
+        var(--primary-color) 45deg,
+        var(--primary-color) 45deg,
+        transparent 60deg,
+        transparent 235deg,
+        var(--primary-color) 360deg,
+        transparent 0deg
+    );
+    animation: rotate 2s linear infinite;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.section-promotions button svg{
     width: 14px;
     height: 14px;
+    fill: var(--text-color);
+}
+.section-promotions button:is(:hover, :focus) svg {
+    fill: var(--primary-color);
 }
 
 .section-features {
@@ -204,6 +269,7 @@
     font-family: "Racing Sans One";
     opacity: 0;
     transition: all 0.5s ease-in-out;
+    text-align: center;
 }
 .gallery-image:hover {
     transform: scale(1.15);
@@ -248,6 +314,7 @@
     font-size: 18px;
     text-align: justify;
     margin-bottom: 10px;
+    color: var(--text-color-2);
 }
 .right {
     width: 100%;
@@ -367,6 +434,13 @@
     transform: translateY(-20%);
 }
 
+.mobile {
+    display: none;
+}
+.desktop {
+    display: flex;
+}
+
 @media (max-width: 1040px) {
     .section-promotions .promotion-description{
         padding: 25px;
@@ -418,21 +492,250 @@
         margin-left: 3em;
         margin-right: 3em;
     }
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+}
+
+@media (max-width: 940px) { 
+    .promotion-slider {
+        position: relative;
+    }
+    .promotion-images {
+        height: 30vh;
+    }
+    .promotion-image{
+        width: 100%;
+        object-fit: cover;
+        float: left;
+        /* height: 25vh; */
+    }
+    .section-promotions .promotion-description {
+        display: flex;
+        padding: 5px;
+    }
+    .promotion-description .promotion-title {
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .promotion-description h1 {
+        font-size: 12px;
+    }
+    .promotion-description h3 {
+        font-size: 18px;
+    }
+    .promotion-description .button-group {
+        gap: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        opacity: 0.5;
+    }
+    .promotion-indicator {
+        gap: 3px;
+    }
+    .promotion-indicator .indicator{
+        padding: 4px;
+        background: var(--text-color);
+        border: 1px solid var(--text-color);
+        border-radius: 50%;
+        transform: scale(0.4);
+    }
+    @keyframes indicatorScale {
+        0%{
+            transform: scale(0.4);
+        }
+        100% {
+            transform: scale(1);
+            background: none;
+        }
+    }
+    .promotion-indicator .active {
+        transform: scale(1);
+        background: none;
+        animation: indicatorScale 0.4s ease-in-out;
+    }
+    .section-promotions button {
+        width: 18px;
+        height: 18px;
+        /* border: 0.15em solid var(--text-color); */
+    }
+    .section-promotions button::before {
+        content : "";
+        width: 0%;
+        height: 0%;
+    }
+    .section-promotions button:focus {
+        border-color: var(--primary-color);
+    }
+    .section-promotions button svg{
+        width: 10px;
+        height: 10px;
+        fill: var(--text-color);
+    }
+
+    .section-features {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .features {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* align-items: center; */
+        gap: 10px;
         row-gap: 40px;
     }
-    .social {
+    .features .title{
+        grid-column: 1;
+    }
+    .feature-item .item-image {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+    .feature-item .item-title {
+        margin: 8px;
+        font-size: 18px;
+    }
+    .feature-item .item-text {
+        font-size: 14px;
+    }
+    .section-gallery {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .gallery-collections {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        height: 40vh;
+    }
+    .gallery-title {
+        margin-bottom: 0.5em;
+    }
+    .gallery-caption{
+        padding: 5px;
+    }
+    .gallery-caption p {
+        color: white;
+        font-size: 10px;
+        font-family: "Racing Sans One";
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+    }
+    .gallery-image:hover .gallery-caption p {
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+    .special .gallery-image:hover .gallery-caption p {
+        transform: translateY(-15px);
+        font-size: 16px;
+    }
+    .special-2 .gallery-image:hover .gallery-caption p {
+        transform: translateY(-15px);
+        font-size: 16px;
+    }
+    .short-description-title {
+        margin-bottom: 0.5em;
+    }
+    .section-short-description {
+        display: flex;
+        flex-direction: column;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .short-description {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+    }
+    .left {
         grid-column: 1;
         grid-row: 2;
     }
-    .newsletter {
-        grid-column: 2;
+    .right {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .short-description-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 5px;
+    }
+    .short-description .title {
+        font-size: 22px;
+        font-family: "Racing Sans One";
+        font-weight: 400;
+        margin-bottom: 5px;
+        color: var(--primary-color);
+        letter-spacing: 3px;
+    }
+    .short-description .description {
+        font-weight: 500;
+        line-height: 1.8em;
+        font-size: 14px;
+        text-align: justify;
+        margin-bottom: 10px;
+    }
+    .promotions{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        width: 1000px;
+        height: 20vh;
+        margin-left: 2em;
+        margin-right: 2em;
+        column-gap: 10px;
+    }
+    .promotion-item {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        /* left: 0%; */
+    }
+    .promotion-item:nth-child(2) {
+        /* left: -25%; */
+    }
+    .promotion-item:nth-child(3) {
+        /* left: -50%; */
+    }
+    .promotion-item:nth-child(4) {
+        /* left: -55%; */
+        /* display: none; */
+    }
+    .promotion-image-2 {
+        clip-path: polygon(20% 0%, 90% 0%, 80% 100%, 10% 100%);
+    }
+    .group-button {
+        display: none;
         grid-row: 2;
+        grid-column: 1/4 span;
+        /* position: absolute;    */
+        /* bottom: 0;
+        right: 0; */
+        /* transform: translateY(-20%); */
     }
-    .copyright {
-        grid-column: 1 / 2 span;
+    .group-button-2 {
+        margin-top: 1em;
+        justify-content: center;
+        margin-left: 2em;
+        margin-right: 2em;
     }
-
+    .mobile {
+        display: flex;
+    }
+    .desktop {
+        display: none;
+    }
+    .features .title, .gallery-title, .short-description-title {
+        font-size: 32px;
+    }
 }

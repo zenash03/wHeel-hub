@@ -24,10 +24,12 @@
                         wHeel Hub
                     </a>
                 </div>
-                <div class="nav-item"><a href="" class="nav-link">Home</a></div>
-                <div class="nav-item"><a href="" class="nav-link">Promotion</a></div>
-                <div class="nav-item"><a href="" class="nav-link">All Cars</a></div>
-                <div class="nav-item"><a href="" class="nav-link">About Us</a></div>
+                <div class="collapse">
+                    <div class="nav-item"><a href="" class="nav-link">Home</a></div>
+                    <div class="nav-item"><a href="" class="nav-link">Promotion</a></div>
+                    <div class="nav-item"><a href="" class="nav-link">All Cars</a></div>
+                    <div class="nav-item"><a href="" class="nav-link">About Us</a></div>
+                </div>
             </div>
             <div class="nav-item"><a href="" class="nav-link register">Register</a></div>
         </div>
@@ -37,24 +39,40 @@
     <main>
         <section class="section-promotions">
             <div class="promotion-banner">
-                <img src="../public/Assets/promotion_banner/2024_corola_hatchback.jpeg" alt="" class="promotion-image">
+                <div class="promotion-slider">
+                    <div class="promotion-images">
+                        <!-- <img src="../public/Assets/promotion_banner/2024_corola_hatchback.jpeg" alt=""
+                            class="promotion-image">
+                        <img src="../public/Assets/promotion_banner/2023_mirai.jpeg" alt=""
+                            class="promotion-image">
+                        <img src="../public/Assets/promotion_banner/2024_corola_hybrid.jpeg" alt=""
+                            class="promotion-image">
+                        <img src="../public/Assets/promotion_banner/2024_highlander_hybrid.jpeg" alt=""
+                            class="promotion-image">
+                        <img src="../public/Assets/promotion_banner/2024_sienna.jpeg" alt=""
+                            class="promotion-image"> -->
+                    </div>
+                </div>
+
                 <div class="promotion-description">
                     <span class="promotion-title">
-                        <h1>New Car Arrival</h1>
-                        <h3>2024 Corola Hatchback</h3>
+                        <h1 id="promotionTitle">New Car Arrival</h1>
+                        <h3 id="promotionDesc">2024</h3>
                     </span>
+                    <ul class="promotion-indicator mobile">
+                    </ul>
                     <div class="button-group">
-                        <button>
-                            <img src="../public/icons/chevron-left-solid.svg" alt="">
+                        <button id="btnPrev">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                                </svg>
                         </button>
-                        <ul class="promotion-indicator">
-                            <li class="indicator active"></li>
-                            <li class="indicator"></li>
-                            <li class="indicator"></li>
-                            <li class="indicator"></li>
+                        <ul class="promotion-indicator desktop">
                         </ul>
-                        <button>
-                            <img src="../public/icons/chevron-right-solid.svg" alt="">
+                        <button id="btnNext">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/>
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -204,20 +222,24 @@
                     </div>
                 </div>
             </div>
+            <div class="group-button-2 mobile">
+                <button class="read-more-button">More</button>
+            </div>
         </section>
+
         <article>
         </article>
     </main>
 
     <footer>
         <div class="footer-content">
-            <div class="footer-col">
+            <div class="footer-col about">
                 <h4>About</h4>
                 <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam rem non debitis
                     quo tempore officia impedit in maiores magnam sit.</p>
                 <button class="read-more-button">Read More</button>
             </div>
-            <div class="footer-col">
+            <div class="footer-col quick">
                 <h4>Quick Menu</h4>
                 <ul class="quick-menu">
                     <li class="quick-item"><a href="" class="quick-menu-link">Home</a></li>
@@ -254,5 +276,9 @@
     </footer>
 
 </body>
+<script src="./js/jquery-3.6.0.min.js"></script>
 
+<script src="./js/scroller.js">
+    
+</script>
 </html>
