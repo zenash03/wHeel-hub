@@ -26,9 +26,9 @@
                 </div>
                 <div class="collapse">
                     <div class="nav-item"><a href="" class="nav-link">Home</a></div>
-                    <div class="nav-item"><a href="" class="nav-link">Promotion</a></div>
-                    <div class="nav-item"><a href="" class="nav-link">All Cars</a></div>
                     <div class="nav-item"><a href="" class="nav-link">About Us</a></div>
+                    <div class="nav-item"><a href="" class="nav-link">All Cars</a></div>
+                    <div class="nav-item"><a href="" class="nav-link">Promotion</a></div>
                 </div>
             </div>
             <div class="nav-item"><a href="" class="nav-link register">Register</a></div>
@@ -226,7 +226,40 @@
                 <button class="read-more-button">More</button>
             </div>
         </section>
-
+        <section class="product-section">
+            <h1 class="gallery-title">Our Products</h1>
+            <div class="product-content">
+                <div class="product-collection">
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="../public/Assets/2024HighlanderHybridToyota.png.webp" alt="">
+                        </div>
+                        <div class="product-obj obj1"></div>
+                        <span class="product-name">Toyota</span>
+                        <div class="product-type">Highlander</div>
+                        <div class="product-desc">
+                            <h2>$ 4,999,99</h2>
+                            <button class="product-button">Buy Now</button>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="../public/Assets/23_bZ4X_XLE_WindChillPearl_2.png" alt="">
+                        </div>
+                        <div class="product-obj obj1"></div>
+                        <span class="product-name">XLE</span>
+                        <div class="product-type">Wind Chill Pearl</div>
+                        <div class="product-desc">
+                            <h2>$ 4,999,99</h2>
+                            <button class="product-button">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-button-group">
+                    <button class="read-more-button">See More</button>
+                </div>
+            </div>
+        </section>
         <article>
         </article>
     </main>
@@ -279,6 +312,21 @@
 <script src="./js/jquery-3.6.0.min.js"></script>
 
 <script src="./js/scroller.js">
-    
+</script>
+
+<script>
+    $(document).ready(function() {
+        // console.log("WE")
+        $('.product-item').on('mousemove', function(e) {
+            let x = e.offsetX / 25;
+            let y = e.offsetY / 25;
+            console.log(x)
+            console.log(y)
+            $(this).css('transform', `translateX(${x}px) translateY(${y}px)`)
+        })
+        $('.product-item').on('mouseleave', function() {
+            $(this).css('transform', `translateX(0px) translateY(0px)`)
+        })
+    })
 </script>
 </html>

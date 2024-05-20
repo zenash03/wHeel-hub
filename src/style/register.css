@@ -1,0 +1,179 @@
+.register-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+}
+.register-card {
+    padding: 3em;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    max-width: 1200px;
+    width: 600px;
+}
+.register-form {
+    display: grid;
+    /* grid-template-columns: repeat(); */
+    /* flex-direction: column; */
+}
+.register-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+.register-desc {
+    color: var(--text-color-2);
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0.3em 0 2em;
+}
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+}
+.form-control label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    color: var(--text-color-focus);
+    text-transform: capitalize;
+}
+.form-control input[type="text"], input[type="email"], input[type="password"], .form-control input[type="date"] {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--bg-contrast);
+    background-color: var(--bg-color-solid);
+    width: 100%;
+    color: var(--text-color-2);
+    outline: none;
+}
+.password-divider {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 10px;
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+.form-gender {
+    margin-bottom: 1.8em;
+}
+.password-divider .form-control {
+    margin-bottom: 0px;
+}
+.password-divider .errorMessage {
+    grid-column: 1 / 2 span;
+}
+.radio-control {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.radio-control span {
+    display: flex;
+    align-items: center;
+}
+.form-control input[type="radio"] {
+    margin-right: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    padding: 2px;
+  /* background-color only for content */
+    background-clip: content-box;
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+}
+.form-control input[type="radio"]:checked {
+    background-color: var(--text-color);
+  }
+.form-control input[type="date"]::-webkit-calendar-picker-indicator {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23bbbbbb" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+    cursor: pointer;
+}
+.form-control input[type="submit"] {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s ease-in;
+}
+.form-control input[type="submit"]:hover {
+    background-color: var(--primary-color-focus);
+    color: var(--text-color-focus);
+}
+.terms {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+.terms input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    border-radius: 2px;
+}
+.terms:hover input ~ .checkIcon {
+    background-color: #ccc;
+}
+.terms input:checked ~ .checkIcon {
+    background-color: #40a1f0;
+}
+.checkIcon:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.terms input:checked ~ .checkIcon:after {
+    display: block;
+}
+.terms .checkIcon:after {
+    left: 5px;
+    top: 2px;
+    width: 3px;
+    height: 7px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.terms .text {
+    font-size: 12px;
+}
+.terms-control {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.errorMessage {
+    text-align: left;
+    display: none;
+    padding-top: 4px;
+    text-align: right;
+    color: #f91226;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.show {
+    display: block;
+}

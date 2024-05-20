@@ -1,5 +1,6 @@
 $(document).ready(function() {
     x = 0;
+
     const promotionBanner = [
         {
             "fileName" : "2024_corola_hatchback.jpeg",
@@ -45,6 +46,8 @@ $(document).ready(function() {
 
     $('#btnNext').click(function() {
         $.nextBanner();
+        $.autoBanner.reset();
+
     })
     $('#btnPrev').click(function() {
         x = (x >= 100) ? (x-100):400;
@@ -66,7 +69,7 @@ $(document).ready(function() {
             $('.promotion-images').css('left', -x+"%"); 
             $.promotionBannerDescInfo(bannerNum);
         }, 300);
-
+        $.autoBanner.reset();
     })
     
     $.promotionBannerDescInfo = function(bannerNum) {
@@ -103,6 +106,34 @@ $(document).ready(function() {
         
     })
 
-    const autoBanner = setInterval($.nextBanner, 4000)
+    // const autoBanner = setInterval(() => {
+    //     $.nextBanner;
+    // }, 4000)
+
+    function Timer(func, time) {
+        let timer = setInterval(func, time);
+
+        this.stop = function() {
+            if(timer) {
+                clearInterval(timer);
+                timer = null;
+            }
+            return this;
+        }
+        this.start = function() {
+            if (!timer) {
+                this.stop();
+                timer = setInterval(func, time);
+            }
+            return this;
+        }
+        this.reset = function(newTime = time) {
+            time = newTime;
+            return this.stop().start();
+        }
+    }
+    $.autoBanner = new Timer($.nextBanner, 4000);
+
+    $.autoBanner.start();
 
 })
