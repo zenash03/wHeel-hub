@@ -1,3 +1,26 @@
+.title-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+    text-align: center;
+}
+.title {
+    font-family: 'Racing Sans One';
+    font-size: 36px;
+    margin-bottom: 10px;
+    position: relative;
+    font-weight: 500;
+}
+.line {
+    border-radius: 6px;
+    width: 5%;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+.extend-line {
+    width: 10%;
+}
 .section-promotions {
     display: flex;
     /* background-color: #f2f2f2; */
@@ -144,14 +167,20 @@
 }
 
 .section-features {
-    margin-left: 5em;
-    margin-right: 5em;
+    margin-left: 2em;
+    margin-right: 2em;
+    display: flex;
+    justify-content: center;
 }
 .features {
+    max-width: 1650px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     /* align-items: center; */
     gap: 50px;
+}
+.features .title-container {
+    grid-column: 1 / 4 span;
 }
 .features .title, .gallery-title, .short-description-title {
     text-align: center;
@@ -188,22 +217,36 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     margin-left: auto;
     margin-right: auto;
+    align-items: center;
+}
+.gallery {
+    /* display: flex;
+    justify-content: center; */
 }
 .gallery-collections {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    height: 110vh;
+    max-width: 1650px;
+    height: 1000px;
 }
 .gallery-item{
+    width: 100%;
+    height: 100%;
     padding: 0;
     margin: 0;
     overflow: hidden;
     position: relative;
+}
+.gallery-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease-in;
 }
 .gallery-title {
     margin-bottom: 1.5em;
@@ -221,33 +264,6 @@
     height: 100%;
     object-fit: cover;
     transition: all 0.5s ease-in;
-    cursor: pointer;
-    /* transform-origin: 65% 75%; */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-image: url("../../public/Assets/product_card/2024_venza.jpeg");
-}
-.img-01 {
-    background-image: url("../../public/Assets/product_card/2023_Mirai.jpeg");
-}
-.img-02 {
-    background-image: url("../../public/Assets/product_card/2024_GR_Corolla.jpeg");
-}
-.img-03 {
-    background-image: url("../../public/Assets/product_card/2024_grand_highlander.jpeg");
-}
-.img-04 {
-    background-image: url("../../public/Assets/product_card/2024_land_cruiser.jpeg");
-}
-.img-05 {
-    background-image: url("../../public/Assets/product_card/2024_prius_prime.jpeg");
-}
-.img-06 {
-    background-image: url("../../public/Assets/product_card/2024_RAV4.jpeg");
-}
-.img-07 {
-    background-image: url("../../public/Assets/product_card/2024_venza.jpeg");
 }
 .gallery-caption{
     position: absolute;
@@ -271,10 +287,10 @@
     transition: all 0.5s ease-in-out;
     text-align: center;
 }
-.gallery-image:hover {
+.gallery-item:hover img {
     transform: scale(1.15);
 }
-.gallery-image:hover .gallery-caption p {
+.gallery-item:hover .gallery-caption p {
     opacity: 1;
     transform: translateY(-20px);
 }
@@ -290,17 +306,29 @@
 .section-short-description {
     display: flex;
     flex-direction: column;
-    margin-left: 12em;
-    margin-right: 12em;
-}
-.short-description {
-    display: grid;
-    grid-template-columns: 3fr 3fr;
-    justify-content: space-between;
-    gap: 100px;
+    margin-left: 8em;
+    margin-right: 8em;
     align-items: center;
 }
-.short-description .title {
+.short-description {
+    max-width: 1600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+.short-description .title-container {
+    grid-column: 1 / 6 span;
+}
+.short-description .left {
+    grid-column: 1 / 3 span;
+    padding: 2em;
+}
+.short-description .right {
+    grid-column: 4 / 3 span;
+}
+.short-description .left .title {
     font-size: 28px;
     font-family: "Racing Sans One";
     font-weight: 400;
@@ -441,6 +469,10 @@
     /* position: relative; */
 }
 .product-content {
+    display: flex;
+    justify-content: center;
+}
+.product-collection {
     background-image: url('../../public/Assets/background.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -449,8 +481,15 @@
     position: relative;
     background-attachment: fixed;
     padding: 20px 30px;
+    max-width: 1600px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
 }
-.product-content::after {
+.product-collection::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -460,18 +499,6 @@
     background: linear-gradient(var(--bg-color), var(--bg-color-solid));
     z-index: -1;
     opacity: 0.4;
-}
-
-.product-collection {
-    /* margin-left: 5em;
-    margin-right: 5em; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    min-height: 400px;
-    position: relative;
-    width: 100%;
 }
 .product-item {
     position: relatives;
@@ -522,8 +549,8 @@
     font-size: 3em;
     top: 10%;
     text-align: center;
-    -webkit-text-stroke: 1px var(--text-color-2);
-    opacity: 0.5;
+    -webkit-text-stroke: 2px var(--text-color-2);
+    opacity: 0.6;
     color: transparent;
     z-index: -1;
     transition: .3s ease-in;
@@ -547,11 +574,6 @@
     font-size: 1.6em;
     font-weight: 700;
 }
-
-/* .product-type:hover {
-    font-size: 1.6em;
-    font-weight: 800;
-} */
 .product-desc {
     display: flex;
     justify-content: space-between;
@@ -593,8 +615,14 @@
     color: #fff;
 }
 .product-button-group {
+    grid-column: 1 / 2 span;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 2em;
 }
 
 .mobile {
@@ -604,7 +632,7 @@
     display: flex;
 }
 
-@media (max-width: 1040px) {
+@media only screen and (max-width: 1023px) {
     .section-promotions .promotion-description{
         padding: 25px;
     }
@@ -628,18 +656,20 @@
         background: none;
         border-radius: 50%;
     }
+    .section-promotions button::before {
+        content : "";
+        width: 0%;
+        height: 0%;
+    }
     .section-promotions button img{
         width: 10px;
         height: 10px;
     }
     .features {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        /* grid-template-columns: 1fr 1fr; */
         /* align-items: center; */
         gap: 40px;
-    }
-    .features .title{
-        grid-column: 1 / 2 span;
     }
     .gallery-caption p {
         font-size: 18px;
@@ -655,17 +685,67 @@
         margin-left: 3em;
         margin-right: 3em;
     }
-}
-
-@media (max-width: 940px) { 
-    .promotion-slider {
+    .product-section {
+        margin-right: 2em;
+        margin-left: 2em;
+    }
+    .product-collection, .product-collection::after {
+        /* background: none; */
+        gap: 20px;
+    }
+    .product-content {
+        padding: 20px;
+    }
+    .product-item {
+        grid-column: 1 / 2 span;
+        width: 100%;
+        padding: 20px;
+    }
+    .product-item img {
+        transform: scaleY(1);
+        top: 5%;
+    }
+    .product-item .product-name {
+        transform: scale(1.1);
+        top: 3%;
+    }
+    .product-item .product-type {
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+    .product-desc {
+        margin-top: 15px;
+    }
+    .product-desc h2, .product-desc button {
+        transform: translateY(0);
+    }
+    .product-desc h2 {
+        font-size: 1em;
+    }
+    .product-desc button {
+        padding: 10px 20px;
+    }
+    .product-button-group {
+        margin-top: 20px;
+        justify-content: center;
         position: relative;
     }
-    .promotion-images {
-        height: 30vh;
+}
+
+@media only screen and (max-width: 767px) { 
+    .promotion-banner {
+        /* height: 30vh; */
+    }
+    .promotion-slider {
+        position: relative;
+        height: 100%;
+    }
+    .promotion-images{
+        height: 100%;
     }
     .promotion-image{
         width: 100%;
+        height: 100%;
         object-fit: cover;
         float: left;
         /* height: 25vh; */
@@ -724,8 +804,8 @@
         animation: indicatorScale 0.4s ease-in-out;
     }
     .section-promotions button {
-        width: 18px;
-        height: 18px;
+        width: 30px;
+        height: 30px;
         /* border: 0.15em solid var(--text-color); */
     }
     .section-promotions button::before {
@@ -748,13 +828,13 @@
     }
     .features {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         /* align-items: center; */
         gap: 10px;
         row-gap: 40px;
     }
-    .features .title{
-        grid-column: 1;
+    .features .title-container{
+        grid-column: 1 / 2 span;
     }
     .feature-item .item-image {
         width: 30px;
@@ -763,10 +843,11 @@
     }
     .feature-item .item-title {
         margin: 8px;
-        font-size: 18px;
+        font-size: 14px;
     }
     .feature-item .item-text {
-        font-size: 14px;
+        font-size: 12px;
+        width: min(200px, 100%);
     }
     .section-gallery {
         padding-left: 2rem;
@@ -813,34 +894,28 @@
         margin-right: 2em;
     }
     .short-description {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
-        justify-content: space-between;
-        gap: 20px;
+        gap: 10px;
         align-items: center;
     }
-    .left {
-        grid-column: 1;
-        grid-row: 2;
-    }
-    .right {
-        grid-column: 1;
+    .short-description .title-container {
+        grid-column: 1 / 6 span;
         grid-row: 1;
     }
+    .short-description .left {
+        grid-column: 1 / 6 span;
+        grid-row: 3;
+        padding: 10px;
+    }
+    .short-description .right {
+        grid-column: 1 / 6 span;
+        grid-row: 2;
+    }
+
     .short-description-image {
         width: 100%;
         height: 100%;
         object-fit: contain;
         border-radius: 5px;
-    }
-    .short-description .title {
-        font-size: 22px;
-        font-family: "Racing Sans One";
-        font-weight: 400;
-        margin-bottom: 5px;
-        color: var(--primary-color);
-        letter-spacing: 3px;
     }
     .short-description .description {
         font-weight: 500;
@@ -892,13 +967,30 @@
         margin-left: 2em;
         margin-right: 2em;
     }
+    .product-section {
+        margin-right: 2em;
+        margin-left: 2em;
+    }
+    .product-content, .product-collection {
+        padding: 0;
+    }
+    .product-collection {
+        display: grid;
+        grid-template-columns: 100%;
+        justify-content: center;
+        /* flex-direction: column; */
+    }
+    .product-item {
+        margin: 0;
+    }
+    .product-collection, .product-collection::after {
+        background: none;
+        gap: 20px;
+    }
     .mobile {
         display: flex;
     }
     .desktop {
         display: none;
-    }
-    .features .title, .gallery-title, .short-description-title {
-        font-size: 32px;
     }
 }

@@ -1,0 +1,139 @@
+.section-title-page {
+    width: 100%;
+    background-image: url('/public/Assets/promotion_banner/2024_sienna.jpeg');
+}
+.title-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+    text-align: center;
+}
+.title {
+    font-family: 'Racing Sans One';
+    font-size: 36px;
+    margin-bottom: 10px;
+    position: relative;
+    font-weight: 500;
+}
+.line {
+    border-radius: 6px;
+    width: 5%;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+
+.section-gambar {
+    flex-direction: column;
+}
+.promotion-collection {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+.card {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+.card-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 3s ease-in;
+}
+.card-image .glass {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+.text-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2em;
+}
+.p-content{
+    font-size: 30px;
+}
+.text-container .p-content, .harga-disc, .harga-real{
+    font-family: 'Racing Sans One';
+}
+.text-container .p-content,.harga{
+    font-weight: bold;
+}
+.harga{
+    padding-bottom: 0px;
+    gap: 5px;
+    font-weight: 500;
+}
+.harga-disc-container {
+
+}
+.harga-disc{
+    color: var(--text-color-2);
+    font-size: 130%;
+    position: relative;
+    width: fit-content;
+}
+
+.harga-disc::before{
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 1.5px);
+    border-bottom: 0.18em solid var(--primary-color);
+    transform: rotateZ(-10deg) rotateY(5deg);
+}
+.harga-real{
+    font-size: 200%;
+    line-height: 1em;
+}
+.card:hover .card-image img{
+    transform: scale(1.2);
+}
+@media (max-width: 767px) {
+    .card {
+        grid-column: 1 / 2 span;
+        height: 200px;
+    }
+    .text-container {
+        padding: 0.5em;
+    }
+    .p-content{
+        font-size: 18px;
+    }
+    .harga-disc{
+        color: var(--text-color-2);
+        font-size: 16px;
+        position: relative;
+    }
+    .harga-real{
+        font-size: 18px;
+        line-height: 1em;
+    }
+    .section-title-page {
+        height: 30vh;
+    }
+}

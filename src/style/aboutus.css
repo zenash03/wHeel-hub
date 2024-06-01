@@ -1,0 +1,446 @@
+.section-title-page {
+    background-image: url(/public/Assets/about_us/car_interior.jpeg);
+}
+
+.section-title-page h1 {
+    font-family: 'Racing Sans One';
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+}
+
+.section-aboutus {
+    margin: 3em 5em 5em;
+    display: block;
+}
+.title-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+    text-align: center;
+}
+.info-container {
+    margin: 3em 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+}
+
+.info-container .description {
+    font-size: 18px;
+    font-weight: 500;
+    /* line-height: 1.85em; */
+    line-height: 2em;
+    padding: 2em 3em;
+    color: var(--text-color-2);
+}
+.left {
+    grid-column: 1 / 3 span;
+}
+.right {
+    grid-column: 4 / 3 span;
+}
+.span-title {
+    grid-column: 1 / 6 span;
+    margin-bottom: 1em;
+}
+.info-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: .5s ease-in;
+}
+
+.title {
+    font-family: 'Racing Sans One';
+    font-size: 36px;
+    margin-bottom: 10px;
+    position: relative;
+    font-weight: 500;
+}
+.line {
+    border-radius: 6px;
+    width: 5%;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.title-info {
+    display: flex;
+    flex-direction: column;
+}
+.right {
+    align-items: flex-end;
+}
+.extend-line {
+    width: 10%;
+}
+
+.our-value-section {
+    flex-direction: column;
+    margin: 3em 5em 5em;
+    align-items: center;
+}
+.value-collection {
+    display: grid;
+    max-width: 1600px;
+    grid-template-columns: repeat(auto, minmax(auto, 300px));
+    grid-gap: 30px;
+    padding: 0 5em; 
+}
+.value-collection .title-container {
+    grid-column: 1 / 3 span;
+}
+.value-item {
+    padding: 25px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    background: transparent;
+    transition: transform 0.5s, background 0.5s;
+}
+.value-item:hover {
+    font-weight: 500;
+    background: #b9232b;
+    color: #fff;
+    transform: scale(1.05);
+}
+.value-item .image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1em;
+}
+.value-item .title {
+    font-size: 24px;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    margin-bottom: 1em;
+    transition: .5s ease-in-out;
+    transform-origin: 50% 150%;
+}
+.value-item:hover .title {
+    transform: scale(1.1);
+}
+.value-item .description {
+    line-height: 29px;
+    font-weight: 500;
+    color: var(--text-color-2);
+    transition: .5s ease-in-out;
+}
+.value-item:hover .description {
+    color: var(--text-color);
+}
+
+.our-team-section {
+    flex-direction: column;
+    margin: 3em 5em 5em;
+    align-items: center;
+}
+
+.team-collection {
+    gap: 2rem;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 320px));
+    align-items: center;
+    text-align: center;
+}
+.team-collection .title-container {
+    grid-column: 1 / 3 span;
+}
+.team-card {
+    padding: 16px 20px 30px;
+    border-radius: 14px;
+    background-color: var(--bg-color);
+    transition: all .3s ease-in;
+}
+.team-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    height: auto;
+}
+.team-card h3 {
+    font-size: 22px;
+    margin-bottom: 4px;
+} 
+.team-card h5 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.team-card .description {
+    text-align: justify;
+    color: var(--text-color-2);
+    line-height: 1.5em;
+    font-weight: 550;
+}
+.icons ul {
+    margin: 20px 0 0;
+    gap: 20px;
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+}
+.icons img {
+    width: 20px;
+    height: 20px;
+    transition: all .38s ease;
+}
+.team-card button {
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.1s ease-in;
+    text-transform: capitalize;
+}
+
+.team-card button:is(:hover, :focus) {
+    background-color: var(--primary-color-focus);
+    color: var(--text-color-focus);
+}
+
+.activities {
+    flex-direction: column;
+    margin: 3em 5em 5em;
+    align-items: center;
+}
+.activities-collection {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto, minmax(auto, 600px));
+    column-gap: 3em;
+}
+.activities .title-container {
+    grid-column: 1/2 span;
+}
+.card {
+    position: relative;
+    display: grid;
+}
+.card .img {
+    width: 100%;
+    border-radius: 10px;
+}
+.date p {
+    position: absolute;
+    font-weight: 600;
+    font-style: italic;
+    clip-path: polygon(0% 0%, 100% 0%, 89.6% 100%, 0% 100%);
+    top: 2%;
+    left: -1%;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 20px;
+    padding: 10px 30px 10px 20px;
+    background-color: var(--primary-color);
+    z-index: 1;
+}
+.text-activity {
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.text-activity h4 {
+    font-size: 18px;
+    padding: 0 0 10px;
+}
+.text-activity p {
+    color: #7e7e7e;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 0.5em;
+}
+.text-activity button {
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.1s ease-in;
+}  
+.text-activity button:is(:hover, :focus) {
+    background-color: var(--primary-color-focus);
+    color: var(--text-color-focus);
+}
+
+.gallery-section {
+    flex-direction: column;
+    margin: 3em 5em 5em;
+    align-items: center;
+    justify-content: center;
+}
+.gallery-collection {
+    display: grid;
+    max-width: 1600px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+}
+.gallery-collection .title-container{
+    grid-column: 1/ 3 span;
+}
+.special {
+    grid-column: 1/ 2 span;
+    grid-row: 2 / 2 span;
+}
+.gallery-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    /* border: 1px solid var(--text-color-2); */
+    /* padding: 5px; */
+}
+.gallery-item .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    background-color: rgb(0, 0, 0, 0.5);
+}
+.gallery-item .text h3, p {
+    text-transform: capitalize;
+}
+.gallery-item:hover .text {
+    opacity: 1;
+}
+
+@media (max-width: 1040px) {
+    .info-container .span-title {
+        grid-column:  1 / 6 span;
+    }
+    .info-container .left {
+        grid-column: 1 / 3 span;
+    }
+    .info-container .right {
+        grid-column: 4 / 3 span;
+    }
+    .info-container .description {
+        padding: 1.25em;
+        font-size: 14px;
+        line-height: 2.2em;
+    }
+    .value-collection {
+        gap: 15px;
+        padding: 0;
+    }
+    .value-item .title {
+        font-size: 14px;
+    }
+    .value-item .description {
+        font-size: 12px;
+    }
+    .team-card .description {
+        font-size: 13px;
+        line-height: 2em;
+    }
+    .text-activity h4 {
+        font-size: 14px;
+    }
+    .text-activity p {
+        font-size: 12px;
+    }
+
+    .team-collection {
+        gap: 15px;
+    }
+    .gallery-collection {
+        gap: 15px;
+    }
+}
+@media (max-width: 767px) {
+    .section-title-page {
+        height: 20vh;
+    }
+    .section-aboutus {
+        margin: 2em 2em 3em
+    }
+    .info-container .left {
+        grid-column: 1 / 6 span;
+    }
+    .info-container .right {
+        grid-column: 1 / 6 span;
+    }
+    .info-container .description {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .section-title-page h1 {
+        font-size: 32px;
+    }
+    .our-value-section {
+        margin: 2em 2em 3em;
+    }
+    .value-collection .title-container {
+        grid-column: 1 / 3 span;
+    }
+    .value-collection .value-item {
+        grid-column: 1 / 3 span;
+        padding: 10px;
+    }
+    .value-item .title {
+        margin-bottom: 10px;
+    }
+    .value-item .description {
+        font-size: 12px;
+    }
+    .our-team-section {
+        margin: 2em 2em 3em;
+    }
+    .team-collection .team-card {
+        grid-column: 1 / 3 span;
+    }
+    .activities {
+        margin: 2em 2em 5em;
+    }
+    .activities-collection {
+        row-gap: 20px;
+    }
+    .card {
+        grid-column: 1 / 2 span;
+        position: relative;
+        margin-bottom: 10px;
+    }
+    .gallery-section {
+        margin: 2em 2em 3em;
+    }
+    .gallery-collection {
+        gap: 5px;
+    }
+}

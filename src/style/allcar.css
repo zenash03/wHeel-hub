@@ -1,0 +1,152 @@
+.section-title-page {
+    width: 100%;
+    background-image: url(/public/Assets/product_card/2024_venza.jpeg);
+}
+.title-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+    text-align: center;
+}
+.title {
+    font-family: 'Racing Sans One';
+    font-size: 36px;
+    margin-bottom: 10px;
+    position: relative;
+    font-weight: 500;
+}
+.line {
+    border-radius: 6px;
+    width: 20%;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+.allcar {
+    flex-direction: column;
+    margin: 3em 5em 5em;
+    justify-content: center;
+    align-items: center;
+}
+.car-collection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 350px));
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 1650px;
+    overflow: hidden;
+}
+.car-collection .title-container {
+    /* grid-column: 1 / 4 span; */
+}
+.product-item {
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    border-radius: 10px;
+    z-index: 3;
+    transition: .3s;
+    transform-style: preserve-3d;
+    background: rgba(38, 38, 38, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(2.4px);
+    border: 1px solid rgba(38, 38, 38, 0.37);
+}
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    transform: translateZ(50px);
+    transform: scale(0.95);
+    transition: .15s ease-in;
+}
+.product-item:hover .product-image {
+    transform: scale(1);
+}
+.glass{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.4;
+    position: absolute;
+    z-index: 5;
+}
+.product-image img {
+    border-radius: 6px;
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transition: .3s ease-in;
+    top: 0%;
+}
+.product-type {
+    margin-top: 10px;
+    cursor: pointer;
+    display: absolute;
+    font-size: 1.25em;
+    transform: scale(0.9);
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-color-2);
+    word-spacing: 2px;
+    transition: .3s ease;
+}
+.product-item:hover .product-type {
+    transform: scale(1);
+}
+.product-desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+.product-desc h2 {
+    font-size: 1.4em;
+    color: #fff;
+}
+.product-desc button {
+    padding: 10px 24px;
+    border-radius: 50px;
+    border: none;
+    font-size: 0.8em;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: var(--primary-color);
+}
+.product-button:hover {
+    transition-delay: 0;
+    background-color: var(--primary-color-focus);
+    color: #fff;
+}
+
+@media (max-width: 1040px) {
+    .allcar {
+        margin: 3em 2em 5em;
+    }
+    .car-collection {
+        grid-template-columns: 350px 350px;
+    }
+}
+@media only screen and (max-width: 767px) { 
+    .section-title-page {
+        height: 30vh;
+    }
+    .allcar {
+        flex-direction: column;
+        margin: 3em 1.5em 5em;
+        justify-content: center;
+        align-items: center;
+    }
+    .car-collection {
+        grid-template-columns: auto;
+    }
+
+}

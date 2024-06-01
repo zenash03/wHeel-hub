@@ -53,6 +53,7 @@ main {
     padding-top: 64px;
     background-color: var(--bg-color-solid);
     width: 100%;
+    min-height: 100vh;
 }
 footer {
     grid-area: "footer";
@@ -69,6 +70,10 @@ footer {
     padding-right: 2rem;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    z-index: 10;
+    background-color: var(--bg-color);
+
 }
 .header-nav {
     display: flex;
@@ -104,7 +109,7 @@ footer {
     padding: 0.4em 0.8em;
     border-radius: 5px;
 }
-.nav-link:is(:focus, :hover) {
+.nav-link:is(:focus, :hover), .active {
     color: var(--text-color-focus);
     background-color: var(--bg-contrast);
 }
@@ -118,30 +123,20 @@ footer {
 .register:is(:focus, :hover) {
     background-color: var(--primary-color-focus);
 }
-/* #nav-toggle{
-    cursor: pointer;
-    border: none;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-} */
-/* .icon-bar {
-    display: block;
-    width: 25px;
-    height: 4px;
-    margin: 2px;
-    background-color: var(--navbar-text-color);
-} */
+.responsive-navbar {
+    display: flex;  
+}
+.sidebar {
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 5;
+}
 
 main section {
-    /* max-width: 2000px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     display: flex;
     justify-content: center;
     margin-bottom: 6em;
@@ -190,6 +185,10 @@ footer {
     cursor: pointer;
     margin-top: 10px;
     transition: 0.1s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 .read-more-button:is(:hover, :focus) {
     background-color: var(--primary-color-focus);
@@ -274,6 +273,38 @@ footer {
     text-align: center;
 }
 
+.section-title-page {
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35vh;
+    border-image: fill 0 linear-gradient(#0003, #000);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 30px;
+}
+
+.section-title-page h1 {
+    font-family: 'Racing Sans One';
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: 600;
+}
+.section-title-page p {
+    max-width: 900px;
+    font-family: 'Racing Sans One';
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+}
+
 @media (max-width: 1040px) {
     main section {
         margin-bottom: 3em;
@@ -294,6 +325,25 @@ footer {
     }
     .copyright {
         grid-column: 1 / 2 span;
+    }
+    .section-title-page h1 {
+        font-family: 'Racing Sans One';
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+    }
+    .section-title-page p {
+        max-width: 800px;
+        font-family: 'Racing Sans One';
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .title {
+        font-family: 'Racing Sans One';
+        font-size: 28px;
     }
 }
 @media (max-width: 940px) {
@@ -343,5 +393,188 @@ footer {
     .copyright {
         margin-top: 0.5em;
         padding-top: 30px;
+    }
+
+    .collapse, .register-block {
+        display: none;
+    }
+
+    .responsive-navbar {
+        display: flex;
+        margin-left: auto;
+    }
+    .show-sidebar {
+        display: block;
+        transition: .5s ease-in-out;
+    }
+    @keyframes rotating {
+        0% {
+            transform: rotateY(0deg);
+        }
+        100% {
+            transform: rotateY(-180deg);
+        }
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            display: none;
+        }
+        100% {
+            display: block;
+            opacity: 1;
+        }
+    }
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+            display: block;
+        }
+        100% {
+            opacity: 0;
+            display: none;
+        }
+    }
+    .sidebar-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgb(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    .showbg {
+        opacity: 1;
+        display: block;
+        animation: fadeIn .5s ease-in;
+    }
+    .hidebg {
+        opacity: 0;
+        display: none;
+        animation: fadeOut .5s ease-in-out;
+    }
+    @keyframes slideSidebarShow {
+        0%{
+            top: -70%;
+            opacity: 0.3;
+            display: none;
+        }
+        50%{
+            opacity: 1;
+            display: flex;
+        }
+        100% {
+            top: 0;
+        }
+    }
+    @keyframes slideSidebarHide {
+        0% {
+            top: 0;
+            display: flex;
+            opacity: 1;
+        }
+        50%{
+            top: -80%;
+        }
+        100% {
+            display: none;
+            opacity: 0;
+        }
+    }
+    .sidebar-content {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        width: 100%;
+        min-height: 50%;
+        background: var(--bg-color);
+        top: -80%;
+    }
+    .show-sidebar-content {
+        display: flex;
+        top: 0;
+        opacity: 1;
+        animation: slideSidebarShow .5s ease-in;
+    }
+    .hide-sidebar-content {
+        opacity: 0;
+        display: none;
+        top: -80%;
+        animation: slideSidebarHide .5s ease-in;
+    }
+    .sidebar-title {
+        margin: 0.5em 1.25em 1em;
+        padding: 0.6em 0em 1em;
+        border-bottom: 1px solid var(--text-color);
+        display: flex;
+        align-items: center;
+    }
+    .sidebar-title .title {
+        font-size: 18px;
+        font-family: 'Racing Sans One';
+        font-weight: 500;
+        margin: 0 0 0 4px;
+    }
+    .menu-icon-container {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin-right: 0.5em;
+    }
+    .menu-icons {
+        width: 24px;
+        height: 24px;
+        animation: 0.3s rotating ease-in;
+    }
+    .sidebar-nav {
+        padding: 5em 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .sidebar-item {
+        /* padding: 15px 0; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .sidebar-item .sidebar-link {
+        text-decoration: none;
+        font-size: 16px;
+        width: 100%;
+        padding: 15px 1.5em;
+        /* padding: 0; */
+        position: relative;
+        z-index: 3;
+    }
+    .sidebar-item .sidebar-link::before {
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: var(--bg-contrast);
+        width: 0%;
+        height: 100%;
+        content: '';
+        z-index: -1;
+        transition: 0.5s;
+    }
+    .sidebar-item .sidebar-link:is(:hover)::before {
+        width: 100%;
+    }
+    
+    .sidebar-register {
+        /* margin: auto; */
+        margin: auto 1em 1em 1em;
+        /* padding: 5px 10px; */
+        background-color: var(--primary-color);
+        border-radius: 6px;
+        font-weight: 600;
+    }
+    .sidebar-register .sidebar-link::before {
+        background-color: var(--primary-color-focus);
+        border-radius: 6px;
     }
 }

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Promotion</title>
     <link rel="stylesheet" href="./style/main.css">
-    <link rel="stylesheet" href="./style/register.css">
+    <link rel="stylesheet" href="./style/promotion.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
                     <div class="nav-item"><a href="/src/home.html" class="nav-link">Home</a></div>
                     <div class="nav-item"><a href="/src/aboutus.html" class="nav-link">About Us</a></div>
                     <div class="nav-item"><a href="/src/allcar.html" class="nav-link">All Cars</a></div>
-                    <div class="nav-item"><a href="/src/promotion.html" class="nav-link">Promotion</a></div>
+                    <div class="nav-item"><a href="/src/promotion.html" class="nav-link active">Promotion</a></div>
                 </div>
             </div>
             <div class="responsive-navbar">
@@ -50,89 +50,92 @@
     </header>
 
     <main>
-        <section class="register-section">
-            <div class="register-card">
-                <form action="" class="register-form" name="register" id="registerForm">
-                    <h2 class="register-title">Register</h2>
-                    <p class="register-desc">Create a new account to access the application.</p>
-                    <div class="form-control">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" name="username">
-                        <p class="errorMessage" name="usernameCheck">message</p>
+        <section class="section-title-page">
+            <h1>WheelHub</h1>
+            <p>“Experience the pinnacle of automotive excellence with our sleek sports car.”</p>
+        </section>
+        <section class="section-gambar">
+            <div class="title-container">
+                <h1 class="title">Promotions</h1>
+                <span class="line extend-line"></span>
+            </div>
+            <div class="promotion-collection">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/public/Assets/promotion_banner/2023_mirai.jpeg" alt="">
+                        <div class="glass"></div>
                     </div>
-                    <div class="form-control">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email">
-                        <p class="errorMessage" name="emailCheck">message</p>
-                    </div>
-                    <div class="password-divider">
-                        <div class="form-control">
-                            <label for="password">password</label>
-                            <input type="password" name="password" id="password">
-                        </div>
-                        <div class="form-control">
-                            <label for="confirmPassword">confirm password</label>
-                            <input type="password" name="confirmPassword" id="confirmPassword">
-                        </div>
-                        <p class="errorMessage" name="passwordCheck">message</p>
-                    </div>
-                    <div class="form-control form-gender">
-                        <label for="gender">gender</label>
-                        <div class="radio-control">
-                            <span>
-                                <input type="radio" name="gender" id="male" value="male">
-                                <p>Male</p>
-                            </span>
-                            <span>
-                                <input type="radio" name="gender" id="female" value="female">
-                                <p>Female</p>
-                            </span>
-                            <span>
-                                <p class="errorMessage" name="genderCheck">message</p>
-                            </span>
+                    <div class="text-container">
+                        <p class="p-content">2023 Mirai</p>
+                        <div class="harga">
+                            <div class="harga-disc-container">
+                                <p class="harga-disc">$67,095</p>
+                            </div>
+                            <p class="harga-real">$63,595</p>
                         </div>
                     </div>
-                    <div class="form-control">
-                        <label for="dob">date of birth</label>
-                        <input type="date" id="dob" name="dob">
-                        <p class="errorMessage" name="dobCheck">message</p>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/public/Assets/promotion_banner/2024_corola_hatchback.jpeg" alt="">
+                        <div class="glass"></div>
                     </div>
-                    <div class="form-control terms-control">
-                        <label class="terms">
-                            <input type="checkbox" id="termsConds" name="termsConds">
-                            <span class="checkIcon"></span>
-                            <p class="text">I agree with terms and conditions</p>
-                        </label>
-                        <p class="errorMessage" name="termsCheck">message</p>
-
+                    <div class="text-container">
+                        <p class="p-content">2024 Corolla Hatchback</p>
+                        <div class="harga">
+                            <p class="harga-disc">$27,675</p>
+                            <p class="harga-real">$24,595</p>
+                        </div>
                     </div>
-                    <div class="form-control">
-                        <input type="submit" id="submitButton" value="Register">
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/public/Assets/promotion_banner/2024_corola_hybrid.jpeg" alt="">
+                        <div class="glass"></div>
                     </div>
-                </form>
+                    <div class="text-container">
+                        <p class="p-content">2024 Corola Hybrid</p>
+                        <div class="harga">
+                            <p class="harga-disc">$41,965</p>
+                            <p class="harga-real">$38,203</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/public/Assets/promotion_banner/2024_highlander_hybrid.jpeg" alt="">
+                        <div class="glass"></div>
+                    </div>
+                    <div class="text-container">
+                        <p class="p-content">2024 Highlander Hybrid</p>
+                        <div class="harga">
+                            <p class="harga-disc">$46,800</p>
+                            <p class="harga-real">$43,294</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/public/Assets/promotion_banner/2024_sienna.jpeg" alt="">
+                        <div class="glass"></div>
+                    </div>
+                    <div class="text-container">
+                        <p class="p-content">2024 Sienna</p>
+                        <div class="harga">
+                            <p class="harga-disc">$45,320</p>
+                            <p class="harga-real">$39,200</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        <section class="section-popup" id="section-popup">
-               <div class="popup-card">
-                    <h1 class="title">Registration Successful!</h1>
-                    <div class="popup-content">
-                        <h4 class="welcome">Welcome to Wheel Hub!</h4>
-                        <img src="../public/Assets/joinUsSectionBaner.jpeg" alt="" class="welcome-image">
-                        <p class="description">Thank you for registering with Wheel Hub, a pioneer in automotive retail since 1995. We're thrilled to have you on board as we expand our reach with the launch of our cutting-edge website.</p>
-                        <div class="button-group">
-                            <a href="home.html" class="popup-button">Home</a>
-                        </div>
-                    </div>
-               </div> 
-            </section>
     </main>
-
     <footer>
         <div class="footer-content">
             <div class="footer-col about">
                 <h4>About</h4>
                 <p class="about-text">Wheel Hub, A Pioneer In Automotive Retail Since 1995, Is Expanding Its Reach With The Launch Of A Cutting-Edge Website.</p>
-                <button class="read-more-button">Read More</button>
+                <a class="read-more-button" href="/src/aboutus.html">Read More</a>
             </div>
             <div class="footer-col quick">
                 <h4>Quick Menu</h4>
@@ -171,9 +174,8 @@
     </footer>
 
 </body>
-<script src="./js/jquery-3.6.0.min.js"></script>
-<script src="./js/register.js"></script>
-<script src="./js/navbar.js"></script>
-<!-- <script src="./js/formValidator.js"></script> -->
+<script src="./js/navbar.js">
+
+</script>
 
 </html>

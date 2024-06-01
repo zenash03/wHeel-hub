@@ -136,4 +136,17 @@ $(document).ready(function() {
 
     $.autoBanner.start();
 
+
+    $(document).ready(function() {
+        $('.product-item').on('mousemove', function(e) {
+            let x = e.offsetX / 25;
+            let y = e.offsetY / 25;
+            console.log(x)
+            console.log(y)
+            $(this).css('transform', `translateX(${x}px) translateY(${y}px)`)
+        })
+        $('.product-item').on('mouseleave', function() {
+            $(this).css('transform', `translateX(0px) translateY(0px)`)
+        })
+    })
 })
